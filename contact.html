@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Elijah Avery</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-block {
+            border: 2px solid var(--fg);
+            border-left: 6px solid var(--accent);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            background: #fafafa;
+            font-family: var(--sans);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .contact-block p {
+            margin-bottom: 1rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            padding: 0.75rem;
+            border: 2px solid var(--fg);
+            background: var(--bg);
+            color: var(--fg);
+            outline: none;
+            resize: vertical;
+            transition: border-color 0.1s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            font-family: var(--mono);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            padding: 0.75rem 2rem;
+            background: var(--fg);
+            color: var(--bg);
+            border: 2px solid var(--fg);
+            cursor: pointer;
+            align-self: flex-start;
+            transition: all 0.1s;
+            text-transform: uppercase;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg);
+        }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="site-title">
+            <span class="bracket">[</span>
+            <span class="name">ELIJAH AVERY</span>
+            <span class="bracket">]</span>
+        </div>
+        <nav>
+            <a href="index.html">~/</a>
+            <a href="projects.html">~/projects</a>
+            <a href="research.html">~/research</a>
+            <a href="now.html">~/now</a>
+            <a href="contact.html" class="active">~/contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="terminal-line" style="margin-bottom: 2rem;">
+            <span class="prompt">$</span>
+            <span class="command"> ping eavery</span>
+        </div>
+
+        <div class="contact-block">
+            <p>If you have a question about the work, a correction, a collaboration, or simply something worth saying — send it.</p>
+            <p>I read everything. I respond to most things. I'm slow.</p>
+        </div>
+
+        <!-- Replace action URL with your Formspree endpoint after setup -->
+        <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-group">
+                <label for="name">NAME</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">EMAIL</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+                <label for="message">MESSAGE</label>
+                <textarea id="message" name="message" placeholder="What's on your mind." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send →</button>
+            <p class="form-note">Powered by Formspree. No account required on your end.</p>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-left">
+            <span>ELIJAH AVERY</span>
+        </div>
+        <div class="footer-right">
+            <span>NO COOKIES. NO TRACKING. JUST HTML.</span>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+/* ============================================
+   ELIJAH AVERY — PERSONAL SITE
+   Brutalist. Monospace. No apologies.
+   ============================================ */
+
+:root {
+    --bg: #ffffff;
+    --fg: #0a0a0a;
+    --accent: #f29455;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --border: 2px solid #0a0a0a;
+    --gap: 2rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--bg);
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--mono);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================
+   HEADER & NAV
+   ============================================ */
+
+header {
+    border-bottom: var(--border);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+}
+
+.site-title {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.bracket {
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.name {
+    margin: 0 0.25rem;
+}
+
+nav {
+    display: flex;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--fg);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid transparent;
+    transition: all 0.1s;
+}
+
+nav a:hover,
+nav a.active {
+    border-color: var(--fg);
+    background: var(--fg);
+    color: var(--bg);
+}
+
+nav a.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+main {
+    flex: 1;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* ============================================
+   HERO / TERMINAL SECTION
+   ============================================ */
+
+.hero {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    border: var(--border);
+    border-left: 6px solid var(--accent);
+    background: #fafafa;
+}
+
+.terminal-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.prompt {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+    user-select: none;
+}
+
+.command {
+    color: var(--fg);
+    font-size: 1rem;
+}
+
+.output {
+    margin: 1.5rem 0 1.5rem 1.5rem;
+    font-family: var(--sans);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.5rem;
+}
+
+.output p {
+    margin-bottom: 0.5rem;
+}
+
+.cursor-line {
+    margin-bottom: 0;
+}
+
+.cursor {
+    animation: blink 1s step-end infinite;
+    color: var(--accent);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ============================================
+   DIVIDERS
+   ============================================ */
+
+.divider {
+    text-align: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #888;
+    margin: 3rem 0 2rem;
+    user-select: none;
+}
+
+/* ============================================
+   PROJECT CARDS
+   ============================================ */
+
+.projects-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-card {
+    border: var(--border);
+    padding: 1.5rem;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.project-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 5px 5px 0 var(--accent);
+}
+
+.project-meta {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    border: 1px solid var(--fg);
+    padding: 0.15rem 0.5rem;
+    background: var(--fg);
+    color: var(--bg);
+}
+
+.project-card h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.project-card h2 a {
+    color: var(--fg);
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+}
+
+.project-card h2 a:hover {
+    background: var(--accent);
+    color: var(--bg);
+    border-bottom-color: var(--accent);
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-family: var(--sans);
+    line-height: 1.6;
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    border-top: 1px solid #eee;
+    padding-top: 0.75rem;
+}
+
+.status {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+.status.active {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.read-more {
+    color: var(--fg);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.read-more:hover {
+    color: var(--accent);
+}
+
+/* ============================================
+   AREAS GRID
+   ============================================ */
+
+.areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.area {
+    border: var(--border);
+    padding: 1.5rem;
+    border-top: 4px solid var(--accent);
+}
+
+.area h3 {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+}
+
+.area p {
+    font-size: 0.85rem;
+    font-family: var(--sans);
+    color: #444;
+    line-height: 1.6;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    border-top: var(--border);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.footer-right {
+    color: #888;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    main {
+        padding: 2rem 1rem;
+    }
+
+    .hero {
+        padding: 1.25rem;
+    }
+
+    .output {
+        font-size: 1rem;
+        margin-left: 0.75rem;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
